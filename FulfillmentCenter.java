@@ -1,16 +1,18 @@
 import java.util.*;
 
 public class FulfillmentCenter implements Comparable<Item> {
-    public Scanner scanner = new Scanner(System.in);
     public String nameWarehouse;
-    List<Item> list = new ArrayList<Item>();
+     public List<Item> list = new ArrayList<Item>();
     public double capacityWarehouse;
-    Item i1 = Collections.max(list, new Comparator<Item>() {
+public    Item i1 = Collections.max(list, new Comparator<Item>() {
         @Override
         public int compare(Item o1, Item o2) {
             return Integer.compare(o1.amount, o2.amount);
         }
     });
+    public  Item max(){
+        return i1;
+    }
 
     public void addProduct(Item item) {
         for (int i = 0; i < list.size(); i++) {
@@ -118,6 +120,8 @@ public class FulfillmentCenter implements Comparable<Item> {
     public int compareTo(Item o) {
         return 0;
     }
+
+
 }
 
 
